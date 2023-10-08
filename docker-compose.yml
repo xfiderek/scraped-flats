@@ -1,0 +1,14 @@
+version: '3'
+services:
+  db:
+    image: postgres:alpine
+    env_file:
+      - dev.env
+  app:
+    build: .
+    env_file:
+      - dev.env
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db

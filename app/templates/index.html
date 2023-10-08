@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Flats</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 2em
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .flat-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1%;
+            border: 1px solid #2196F3;
+            padding: 10px;
+        }
+
+        .flat-title {
+            flex: 1;
+            margin-left: 10%
+        }
+
+        .flat-image {
+            width: 30%;
+            height: auto;
+            margin-right: 10%
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Flats</h1>
+    {% for flat in flats %}
+    <div class="flat-container">
+        <p class="flat-title">{{ flat.name }}</p>
+        <img class="flat-image" src={{ flat.image_url }} alt={{ flat.name }}>
+    </div>
+    {% endfor %}
+    </div>
+</body>
+
+</html>
